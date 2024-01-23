@@ -10,12 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%String message=(String)request.getAttribute("message"); %>
-<%if(message!=null){%>
-<%=message %>
-<%} %>
    <h1>Welcome</h1>
-   <a href="addmovie.jsp">ADD MOVIE</a>
+   <a href="addmovie.jsp">Add_Movie</a><br>
+   
    <% List<Movie>movies=(List)request.getAttribute("movies"); %>
    <table border="2px" class="table">
    <tr>
@@ -40,10 +37,16 @@
    <td><%= m.getMovielanguage() %></td>
    <%String base64image =new String(Base64.getEncoder().encode(m.getMovieimage())); %>
    <td><img src="data:image/jpeg;base64,<%=base64image%>"height="150px" width="250px"></td>
+   
+   
    <td><a href="deletemovie?id=<%=m.getMovieid()%>">delete</a> </td>
 	<td><a href="editmovie?id=<%=m.getMovieid()%>">edit</a> </td>
-   </tr>  
+	
+	</tr>
+	  
    <% } %>
-   </table>   
+   <a href="logout">LOGOUT</a>
+   </table>
+      
 </body>
 </html>

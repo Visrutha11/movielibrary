@@ -46,7 +46,7 @@ public class UpdateMovie extends HttpServlet
 				
 				req.setAttribute("movie", dao.getAllmovies());
 				RequestDispatcher dispatcher= req.getRequestDispatcher("home.jsp");
-				dispatcher.include(req, resp);
+				dispatcher.forward(req, resp);
 				
     	  }
     	  else

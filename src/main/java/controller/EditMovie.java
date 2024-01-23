@@ -26,10 +26,10 @@ public class EditMovie extends HttpServlet
   			String adminname=(String) session.getAttribute("adminname");
   			if(adminname!=null)
   			{
-  			Movie m = dao.findmovieByid(id);
-  			req.setAttribute("movie", m);
-  			RequestDispatcher dispatcher=req.getRequestDispatcher("edit.jsp");
-  			dispatcher.include(req, resp);
+  			 Movie m = dao.findmovieByid(id);
+  			 req.setAttribute("movie", m);
+  			 RequestDispatcher dispatcher=req.getRequestDispatcher("edit.jsp");
+  			 dispatcher.include(req, resp);
   		} 
   			else
   			{
